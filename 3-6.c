@@ -1,9 +1,7 @@
 #include <stdio.h>
-
-// 1. ประกาศโครงสร้าง (struct) ชื่อ Transaction
 struct Transaction {
-    char description[50]; // คำอธิบายธุรกรรม
-    float amount;         // จำนวนเงิน (บวกสำหรับรายรับ, ลบสำหรับรายจ่าย)
+    char description[50];
+    float amount;
 };
 
 int main() {
@@ -25,9 +23,7 @@ int main() {
             return 1;
         }
 
-        // 4. การจำแนก/สะสมยอด
         if (transactions[i].amount >= 0.0) {
-            // ถือเป็น รายรับ (Income)
             totalIncome += transactions[i].amount;
         } else {
             totalExpense += -transactions[i].amount;
